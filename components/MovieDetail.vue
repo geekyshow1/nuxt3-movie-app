@@ -1,5 +1,5 @@
 <script setup>
-defineProps(["title", "date", "poster", "revenue", "overview"]);
+defineProps(["title", "date", "poster", "revenue", "overview", "trailer"]);
 </script>
 
 <template>
@@ -8,7 +8,7 @@ defineProps(["title", "date", "poster", "revenue", "overview"]);
     <div class="bg-white rounded-lg shadow-md overflow-hidden">
       <img
         class="h-400 w-full object-cover"
-        :src="poster"
+        :src="`https://image.tmdb.org/t/p/w400/` + poster"
         alt="Placeholder Image"
       />
     </div>
@@ -25,7 +25,7 @@ defineProps(["title", "date", "poster", "revenue", "overview"]);
 
       <div class="mt-6">
         <NuxtLink
-          to="https://www.youtube.com/watch?v=ZvAfmjx3sBs"
+          :to="`https://www.youtube.com/watch?v=${trailer}`"
           target="_blank"
           class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded"
         >

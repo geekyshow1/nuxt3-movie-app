@@ -2,25 +2,39 @@
 definePageMeta({
   layout: "custom",
 });
-const title = ref("Batman Brown City");
-const date = ref("20-01-2023");
-const poster = ref(
-  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/74xTEgt7R36Fpooo50r9T25onhq.jpg"
+const route = useRoute();
+
+// Fetch Single Movie
+const { data: movie, error } = await useFetch(`/api/movies/${route.params.id}`);
+// console.log(movie);
+
+// Fetch Movie Trailer
+const { data: video } = await useFetch(
+  `/api/movies/trailer/${route.params.id}`
 );
-const revenue = ref(45467545);
-const overview = ref(
-  "Inspired by a true story, an oddball group of cops, criminals, tourists and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine."
-);
+
+const allvideo = toRaw(video.value.results);
+// console.log(allvideo);
+const trailer = computed(() => {
+  let trailer = [];
+  for (let i = 0; i < allvideo.length; i++) {
+    if (allvideo[i].type === "Trailer") {
+      trailer.push(allvideo[i]);
+    }
+  }
+  return trailer[0].key;
+});
 </script>
 
 <template>
   <div>
     <MovieDetail
-      :title="title"
-      :date="date"
-      :poster="poster"
-      :revenue="revenue"
-      :overview="overview"
+      :title="movie.title"
+      :date="movie.release_date"
+      :poster="movie.poster_path"
+      :revenue="movie.revenue"
+      :overview="movie.overview"
+      :trailer="trailer"
     />
   </div>
 </template>

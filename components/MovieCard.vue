@@ -9,7 +9,7 @@ defineProps(["movieid", "title", "date", "poster"]);
       <div class="overflow-hidden mb-4">
         <img
           class="h-400 w-300 object-cover"
-          :src="poster"
+          :src="`https://image.tmdb.org/t/p/w300/` + poster"
           alt="Placeholder Image"
         />
       </div>
