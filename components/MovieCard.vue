@@ -1,7 +1,3 @@
-<script setup>
-defineProps(["movieid", "title", "date", "poster"]);
-</script>
-
 <template>
   <div class="bg-cyan-50 rounded-lg shadow-md overflow-hidden m-4 px-2">
     <div class="p-1 py-4">
@@ -16,7 +12,7 @@ defineProps(["movieid", "title", "date", "poster"]);
       <p class="text-gray-500 text-sm mb-2 px-2">Release Date: {{ date }}</p>
       <div class="mt-4 p-2 text-right">
         <NuxtLink
-          :to="`movie/${movieid}`"
+          :to="`book/${booksId}`"
           class="bg-rose-500 hover:bg-rose-600 text-white font-medium py-2 px-4 rounded"
           >Get Details</NuxtLink
         >
@@ -24,6 +20,10 @@ defineProps(["movieid", "title", "date", "poster"]);
     </div>
   </div>
 </template>
+
+<script setup>
+defineProps(["booksId", "title", "date", "poster"]);
+</script>
 
 <style scoped>
 .h-400 {
