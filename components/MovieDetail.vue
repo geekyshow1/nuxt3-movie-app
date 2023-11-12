@@ -1,7 +1,3 @@
-<script setup>
-defineProps(["title", "date", "poster", "revenue", "overview"]);
-</script>
-
 <template>
   <div class="grid sm:grid-cols-3 gap-7 justify-items-center m-10">
     <!-- Column 1: Image -->
@@ -40,3 +36,6 @@ defineProps(["title", "date", "poster", "revenue", "overview"]);
     </div>
   </div>
 </template>
+<script setup>
+defineProps(["title", "date", "poster", "revenue", "overview"]);
+</script>

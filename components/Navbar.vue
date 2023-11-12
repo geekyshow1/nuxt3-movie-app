@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div>
     <nav class="bg-cyan-900">

@@ -10,12 +10,12 @@
     </div>
     <div class="md:w-1/2 p-8 shadow-md">
       <p class="text-lg mb-2">
-        123 Main Street<br />
-        Ranchi, India 12345
+        Iskcon Juhu<br />
+        Mumbai, India 12345
       </p>
       <p class="text-lg mb-2">
         Phone: (123) 456-7890<br />
-        Email: info@geekyshows.com
+        Email: info@Iskcon.com
       </p>
       <form>
         <label for="name" class="block text-lg font-bold mb-2">Name</label>
